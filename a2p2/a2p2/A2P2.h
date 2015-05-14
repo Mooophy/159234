@@ -23,10 +23,15 @@ public:
         for (int i = 0; i != size; ++i) ptr[i] = std::move(other[i]);
         other.ptr = nullptr;
     }
+
+        //
+        // destructor
+        //
         ~VecT()
     {
         delete[] ptr;
     }
+
     //
     // operator overloading
     //
