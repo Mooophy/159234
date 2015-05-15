@@ -95,7 +95,7 @@ private:
 // non member functions 
 //
 template<typename T>
-inline std::istream& operator>>(std::istream& is, VecT<T> const& vec)
+inline std::istream& operator>>(std::istream& is, VecT<T> & vec)
 {
 	for(int i = 0; i != vec.getSize(); ++i) is >> vec[i];
 	return is;
@@ -103,11 +103,9 @@ inline std::istream& operator>>(std::istream& is, VecT<T> const& vec)
 
 template<typename T>
 inline std::ostream& operator<<(std::ostream& os, VecT<T> const& vec)
-{
-	int width = 10;
-	os << std::setw(width);
-	for(int i = 0; i != vec.getSize(); ++i) os << vec[i];
-	return os;
+{	
+	for(int i = 0; i != vec.getSize(); ++i) os << std::setw(10) << vec[i];
+	return os << std::endl;
 }
 
 void info()
