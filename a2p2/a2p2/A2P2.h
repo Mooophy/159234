@@ -19,10 +19,10 @@ public:
 		for (int i = 0; i != size; ++i) ptr[i] = other[i];
 	}
 	VecT(VecT && other) noexcept
-		: size{ other.getSize() }, ptr{ new ET[other.getSize()]() }
+		: size{ other.getSize() }, ptr{ other.ptr}
 	{
-		for (int i = 0; i != size; ++i) ptr[i] = std::move(other[i]);
-		other.ptr = nullptr;
+	    other.size = 0;
+	    other.ptr = nullptr;
 	}
 
 	//
@@ -50,13 +50,14 @@ public:
 	}
 	VecT& operator=(VecT && other)
 	{
-		if (this->ptr != other.ptr)
-		{
-			delete[] this->ptr;
-			size = other.size();
-			ptr = new ET[size]();
-			for (int i = 0; i != size; ++i) ptr[i] = other[i];
-		}
+		if(this->ptr == other.ptr) return *this; // to prevent self-assignment
+		
+		delete[] this->ptr;
+		this->size = other.size;
+    		this->ptr = other.ptr;
+		other.ptr = nullptr;
+                other.size = 0;
+		return *this;
 	}
 	bool operator==(VecT const& other) const
 	{
