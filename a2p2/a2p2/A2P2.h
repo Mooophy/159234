@@ -1,3 +1,7 @@
+//
+//  @author : Liu kuan 12086075,  Yuxiang Zhang 13158665 
+//
+
 #pragma once
 #include <iomanip>
 #include <iostream>
@@ -24,7 +28,6 @@ public:
 	    other.size = 0;
 	    other.ptr = nullptr;
 	}
-
 	//
 	// destructor
 	//
@@ -32,7 +35,6 @@ public:
 	{
 		delete[] ptr;
 	}
-
 	//
 	// operator overloading
 	//
@@ -48,15 +50,15 @@ public:
 		other.ptr = nullptr;
 		return *this;
 	}
-	VecT& operator=(VecT && other)
+	VecT& operator=(VecT && other) noexcept
 	{
 		if(this->ptr == other.ptr) return *this; // to prevent self-assignment
 		
 		delete[] this->ptr;
 		this->size = other.size;
-    		this->ptr = other.ptr;
+		this->ptr = other.ptr;
 		other.ptr = nullptr;
-                other.size = 0;
+		other.size = 0;
 		return *this;
 	}
 	bool operator==(VecT const& other) const
@@ -91,6 +93,7 @@ private:
 	int size;
 	ET* ptr;
 };
+
 
 //
 // non member functions 
