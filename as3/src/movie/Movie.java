@@ -10,6 +10,8 @@ public class Movie
 	{
 		return "\nTitle: " + this.title + "\nDirector: " + this.director + "\nTime: " + this.time + " mins\nQuality: " + "*****".substring(0, this.quality);
 	}
+	public void display(){ System.out.println(this.toString()); }
+	
 	
 	private String title, director;
 	private int time, quality;
