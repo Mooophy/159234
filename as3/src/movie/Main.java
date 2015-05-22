@@ -10,7 +10,7 @@ public class Main
     {
         movie.Movie m = new movie.Movie();
         m.setTitle("Go Go Go!!");
-        m.setDirctor("Someone");
+        m.setDirector("Someone");
         m.setQuality(4);
 
         System.out.print(m.toString());

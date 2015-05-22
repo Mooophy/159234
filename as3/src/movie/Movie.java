@@ -5,7 +5,7 @@ import java.io.*;
 public class Movie
 {
     public void setTitle(String t){ this.title = t; }
-    public void setDirctor(String d){ this.director = d; }
+    public void setDirector(String d){ this.director = d; }
     public void setQuality(int q){ this.quality = q; }
 
     @Override
