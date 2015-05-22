@@ -9,7 +9,11 @@ public class Main
     public static void main(String[] args)
     {
         movie.Movie m = new movie.Movie();
-        System.out.println("testingzz\n");
+        m.setTitle("Go Go Go!!");
+        m.setDirctor("Someone");
+        m.setQuality(4);
+
+        System.out.print(m.toString());
     }
 
 }

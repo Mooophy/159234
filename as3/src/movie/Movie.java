@@ -16,7 +16,8 @@ public class Movie
     
     public void display(){ System.out.println(this.toString()); }
 
-    public  void getData(String filename)
+
+    public void getData(String filename)
     {
         BufferedReader buffer = null;
 
