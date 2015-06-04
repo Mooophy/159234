@@ -1,6 +1,3 @@
-//
-//  @author : Liu kuan 12086075,  Yuxiang Zhang 13158665 
-//
 #include <fstream>
 #include <string>
 #include <iostream>
